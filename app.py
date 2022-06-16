@@ -33,7 +33,7 @@ st.write('You selected:', customer_id)
 print("User selected the customer_id {}".format(customer_id))
 
 # AFFICHAGE DU CLIENT
-path_file = "/Users/Robin/DataScience/Projets/7_ImplémentezUnModèleDeScoring/X_test.joblib"
+path_file = "/Users/Robin/DataScience/Projets/7_ImplémentezUnModèleDeScoring/X_test_32.pickle"
 df = joblib.load(path_file)
 st.dataframe(df.iloc[customer_id])
 
@@ -79,75 +79,3 @@ for p in ax.patches :
         p.set_color('crimson')
 ax.set_title("Distribution {}".format(feature_selected))
 st.pyplot(fig)
-
-# TOTAL DISTRIBUTION
-# Features importances list : "CODE_GENDER", "NAME_INCOME_TYPE_Working"
-# feat_imp_list = ["CODE_GENDER", "NAME_INCOME_TYPE_Working, "REG_CITY_NOT_WORK_CITY"]
-# df["NAME_INCOME_TYPE_Working"].hist()
-# plt.show()
-# st.pyplot()
-#
-# fig, ax = plt.subplots()
-# sns.histplot(data=df, x="EXT_SOURCE_3")
-# value2highlight = df.iloc[customer_id]["EXT_SOURCE_3"]
-# x_list = [(abs(value2highlight - p.get_x())) for p in ax.patches]
-# for p in ax.patches :
-#     if abs(value2highlight - p.get_x()) == min(x_list):
-#         p.set_color('crimson')
-# ax.set_title("Distribution EXT_SOURCE_3")
-# st.pyplot(fig)
-#
-#
-# fig, ax = plt.subplots()
-# sns.histplot(data=df, x="EXT_SOURCE_2")
-# value2highlight = df.iloc[customer_id]["EXT_SOURCE_2"]
-# x_list = [(abs(value2highlight - p.get_x())) for p in ax.patches]
-# for p in ax.patches :
-#     if abs(value2highlight - p.get_x()) == min(x_list):
-#         p.set_color('crimson')
-# ax.set_title("Distribution EXT_SOURCE_2")
-# st.pyplot(fig)
-#
-#
-# fig, ax = plt.subplots()
-# sns.histplot(data=df, x="EXT_SOURCE_1")
-# value2highlight = df.iloc[customer_id]["EXT_SOURCE_1"]
-# x_list = [(abs(value2highlight - p.get_x())) for p in ax.patches]
-# for p in ax.patches :
-#     if abs(value2highlight - p.get_x()) == min(x_list):
-#         p.set_color('crimson')
-# ax.set_title("Distribution EXT_SOURCE_1")
-# st.pyplot(fig)
-#
-#
-# fig, ax = plt.subplots()
-# sns.histplot(data=df, x="NAME_INCOME_TYPE_Working")
-# value2highlight = df.iloc[customer_id]["NAME_INCOME_TYPE_Working"]
-# x_list = [(abs(value2highlight - p.get_x())) for p in ax.patches]
-# for p in ax.patches :
-#     if abs(value2highlight - p.get_x()) == min(x_list):
-#         p.set_color('crimson')
-# ax.set_title("Distribution NAME_INCOME_TYPE_Working")
-# st.pyplot(fig)
-#
-#
-# fig, ax = plt.subplots()
-# sns.histplot(data=df, x="REG_CITY_NOT_WORK_CITY")
-# value2highlight = df.iloc[customer_id]["REG_CITY_NOT_WORK_CITY"]
-# x_list = [(abs(value2highlight - p.get_x())) for p in ax.patches]
-# for p in ax.patches :
-#     if abs(value2highlight - p.get_x()) == min(x_list):
-#         p.set_color('crimson')
-# ax.set_title("Distribution REG_CITY_NOT_WORK_CITY")
-# st.pyplot(fig)
-#
-#
-# fig, ax = plt.subplots()
-# value2highlight = df.iloc[customer_id]["CODE_GENDER"]
-# sns.histplot(data=df, x="CODE_GENDER")
-# x_list = [(abs(value2highlight - p.get_x())) for p in ax.patches]
-# for p in ax.patches :
-#     if abs(value2highlight - p.get_x()) == min(x_list):
-#         p.set_color('crimson')
-# ax.set_title("Distribution CODE_GENDER")
-# st.pyplot(fig)
