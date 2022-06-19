@@ -21,10 +21,9 @@ st.markdown(f"<h2 style='text-align: center;'><b>{title_text}</b></h2>", unsafe_
 st.markdown(f"<h5 style='text-align: center;'>{subheader_text}</h5>", unsafe_allow_html=True)
 st.text("")
 
-path = r'/Users/Robin/DataScience/Projets/7_ImplémentezUnModèleDeScoring'
+cwd = os.getcwd() # Get the current working directory
 name = "interpretability_list.joblib"
-interpretability_list = joblib.load(os.path.join(path, name))
-
+interpretability_list = joblib.load(os.path.join(cwd, name))
 
 # SELECTION DU CUSTOMER_ID
 customer_id_list = np.arange(len(interpretability_list))
@@ -33,8 +32,9 @@ st.write('You selected:', customer_id)
 print("User selected the customer_id {}".format(customer_id))
 
 # AFFICHAGE DU CLIENT
-path_file = "/Users/Robin/DataScience/Projets/7_ImplémentezUnModèleDeScoring/X_test_32.pickle"
-df = joblib.load(path_file)
+cwd = os.getcwd()
+name = "X_test_32.pickle"
+df = joblib.load(os.path.join(cwd, name))
 st.dataframe(df.iloc[customer_id])
 
 # PREDICTION
