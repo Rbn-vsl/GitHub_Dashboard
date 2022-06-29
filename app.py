@@ -14,7 +14,7 @@ local_css("style.css")
 
 
 # Build app
-title_text = 'LIME Explainer Dashboard'
+title_text = 'Dashboard Credit Scoring'
 subheader_text = '''Etude de solvabilité du client au prêt immobilier'''
 
 st.markdown(f"<h2 style='text-align: center;'><b>{title_text}</b></h2>", unsafe_allow_html=True)
